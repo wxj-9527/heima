@@ -20,17 +20,17 @@
           <el-menu-item index="1-1">发布文章</el-menu-item>
           <el-menu-item index="1-2">内容列表</el-menu-item>
           <el-menu-item index="1-3">评论列表</el-menu-item>
-          <el-menu-item index="1-3">素材管理</el-menu-item>
+          <el-menu-item index="1-4">素材管理</el-menu-item>
       </el-submenu>
       <el-submenu >
         <template slot="title">
           <i class="el-icon-s-custom"></i>
           <span>粉丝管理</span>
         </template>
-          <el-menu-item index="1-1">图文数据</el-menu-item>
-          <el-menu-item index="1-2">粉丝概括</el-menu-item>
-          <el-menu-item index="1-3">粉丝画像</el-menu-item>
-          <el-menu-item index="1-3">粉丝列表</el-menu-item>
+          <el-menu-item index="1-5">图文数据</el-menu-item>
+          <el-menu-item index="1-6">粉丝概括</el-menu-item>
+          <el-menu-item index="1-7">粉丝画像</el-menu-item>
+          <el-menu-item index="1-8">粉丝列表</el-menu-item>
       </el-submenu>
 
       <el-menu-item index="3">
