@@ -5,10 +5,10 @@
       <span class="title">江苏传智博客教育科技股份有限公司</span>
     </el-col>
     <el-col :span="4">
-      <img class="head-img" src="../../assets/img/avatar.jpg" alt />
+      <img class="head-img" :src="userInfo.photo" alt="" />
     <el-dropdown trigger="click">
         <span class="el-dropdown-link">
-          aimas<i class="el-icon-arrow-down el-icon--right"></i>
+          {{userInfo.name}}<i class="el-icon-arrow-down el-icon--right"></i>
         </span>
         <el-dropdown-menu slot="dropdown">
             <el-dropdown-item>个人信息</el-dropdown-item>
@@ -21,7 +21,28 @@
 </template>
 
 <script>
-export default {}
+export default {
+  data () {
+    return {
+      userInfo: {}
+    }
+  },
+  methods: {
+    getUserInfo () {
+      let token = window.localStorage.getItem('user-token')
+      this.$axios({
+        url: '/user/profile',
+        headers: { 'Authorization': `Bearer${token}` }
+      }).then(result => {
+        debugger
+        this.userInfo = result.data.data
+      })
+    }
+  },
+  created () {
+    this.getUserInfo()
+  }
+}
 </script>
 
 <style lang="less" scoped>
