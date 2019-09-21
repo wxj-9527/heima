@@ -26,13 +26,13 @@
 <script>
 export default {
   data () {
-    let validator = function (rule, value, callBkack) {
+    let validator = function (rule, value, callBack) {
     //   if (value) {
     //     callBkack()
     //   } else {
     //     callBkack(new Error('请在阅读后勾选确认'))
     //   }
-      value ? callBkack() : callBkack(new Error('请在阅读后勾选确认'))
+      value ? callBack() : callBack(new Error('请在阅读后勾选确认'))
     }
     return {
       loginForm: {
@@ -59,6 +59,7 @@ export default {
             data: this.loginForm
           }).then(result => {
             window.localStorage.setItem('user-token', result.data.data.token)
+            this.$router.push('/home')
           }).catch(() => {
             this.$message({
               message: '手机号或验证码错误',
@@ -75,7 +76,7 @@ export default {
 
 <style lang="less" scoped>
 .login {
-    background-image: url('../../assets/img/login_bg.jpg');
+    background-image: url('../../assets/img/005.jpg');
     // width: 100%;
     height: 100vh;
     background-size: cover;
