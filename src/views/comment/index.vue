@@ -1,5 +1,8 @@
 <template>
-  <el-card>
+  <el-card     v-loading="loading"
+    element-loading-text="拼命加载中"
+    element-loading-spinner="el-icon-more"
+    element-loading-background="rgba(0, 0, 0, 0.8)">
     <bread-crumb slot="header">
       <template slot="title">评论列表</template>
     </bread-crumb>
@@ -47,7 +50,8 @@ export default {
         total: 0, // 总条数
         currentPage: 1, // 默认第一页
         pageSize: 10 // 每页多少条
-      }
+      },
+      loading: false
     }
   },
   methods: {
@@ -56,12 +60,14 @@ export default {
       this.getComment()
     },
     getComment () {
+      this.loading = true
       this.$axios({
         url: '/articles',
         params: { response_type: 'comment', page: this.page.currentPage, per_page: this.page.pageSize }
       }).then(result => {
         this.list = result.data.results
         this.page.total = result.data.total_count
+        this.loading = false
       })
     },
     stateFormatter (row, column, cellValue, index) {
