@@ -40,7 +40,7 @@ export default {
     },
     commonClick (key) {
       if (key === 'account') {
-
+        this.$router.push('/home/account')
       } else if (key === 'git') {
         window.location.href = 'https://github.com/shuiruohanyu/83heimatoutiao'
       } else {
