@@ -4,7 +4,7 @@
       <layout-aside></layout-aside>
     </el-aside>
     <el-container>
-      <el-header style="background-color: #323745">
+      <el-header style="background-color: #999">
         <layout-header></layout-header>
       </el-header>
       <el-main style="padding:0;background-color: #323745">
