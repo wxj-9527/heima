@@ -1,7 +1,12 @@
 import axios from 'axios'
+import jsonBig from 'json-bigint'
 import { Message } from 'element-ui'
 import router from '../permission'
 axios.defaults.baseURL = 'http://ttapi.research.itcast.cn/mp/v1_0'
+axios.defaults.transformResponse = [function (data) {
+  return jsonBig.parse(data)
+}]
+
 axios.interceptors.request.use(function (config) {
   let token = window.localStorage.getItem('user-token')
   config.headers['Authorization'] = `Bearer ${token}`
@@ -35,7 +40,7 @@ axios.interceptors.response.use(function (response) {
     default:
       break
   }
-  Message({ message })
+  Message({ message, type: 'warning' })
   return new Promise(function () {})
 })
 export default axios
