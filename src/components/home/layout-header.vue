@@ -6,7 +6,7 @@
     </el-col>
     <el-col :span="4">
       <img class="head-img" :src="!userInfo.photo?userInfo.photo:defaultImg" alt="" />
-    <el-dropdown trigger="click" @command="commonClick">
+      <el-dropdown trigger="click" @command="commonClick">
         <span class="el-dropdown-link">
           {{ userInfo.name }}<i class="el-icon-arrow-down el-icon--right"></i>
         </span>
@@ -15,8 +15,8 @@
             <el-dropdown-item command="git">git地址</el-dropdown-item>
             <el-dropdown-item command="lgout">退出</el-dropdown-item>
         </el-dropdown-menu>
-    </el-dropdown>
-        </el-col>
+      </el-dropdown>
+    </el-col>
   </el-row>
 </template>
 
@@ -58,6 +58,7 @@ export default {
 <style lang="less" scoped>
 .layout-header{
     height: 50px;
+
     .el-icon-s-unfold{
         font-size: 22px;
     }

@@ -76,7 +76,7 @@ export default {
 
 <style lang="less" scoped>
 .login {
-    background-image: url('../../assets/img/005.jpg');
+    background-image: url('../../assets/img/060.gif');
     // width: 100%;
     height: 100vh;
     background-size: cover;
@@ -86,6 +86,8 @@ export default {
     .login-card {
         width: 440px;
         height: 340px;
+        background-color:#1d2524b8;
+        border-radius: 10px;
         .title{
             text-align: center;
             img{
