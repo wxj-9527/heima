@@ -19,6 +19,10 @@ export default new Router({
         {
           path: '',
           component: Main
+        },
+        {
+          path: 'comment',
+          component: () => import('./views/comment')
         }
       ]
     },
